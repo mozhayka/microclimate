@@ -49,33 +49,45 @@
 \end{figure}
 
 Можно видеть, что у Normal и Fine сеток большая погрешность, тогда как начиная с Finer результат выглядит достаточно гладко. Время вычисления для Finer составило 20 секунд, для Extra fine - 80 секунд.\par
-Была попытка запустить вычисления на сетке размером Extremely fine, но ожидаемое время было слишком большим и требовалось много памяти, поэтому было решено остановиться на Extra fine, как наиболее точной при приемлемых затратах
+Была попытка запустить вычисления на сетке размером Extremely fine, но ожидаемое время было слишком большим и требовалось много памяти. В итоге было решено остановиться на Finer как достаточно точной при приемлемых затратах.
 
 \newpage
 
 
 \subsection{Построение модели помещения}
 
-За основу было выбрано помещение, смоделированное в программе FreeCAD, экспортированное сначала в формат STL (но из-за особенности формата не подошло), затем в STEP (не удалось построить сетку разбиения из-за неточностей в геометрии помещения). 
-В итоге было принято решение построить упрощенную модель сразу в COMSOL.\\
-Помещение размером $10 \times 6 \times 3 \text{ м}^3$ с окном, дверью и внутренней стеной с проходом. 
-Начальная температура комнаты $293K$, на все стены, окно и дверь снаружи задана температура $330K$.
-Временной промежуток 1000 секунд.\\
-Размер сетки Extra fine. 
-Полученные результаты можно увидеть на изображениях снизу
+За основу было выбрано помещение, смоделированное в программе FreeCAD, экспортированное сначала в формат STL (но из-за особенности формата не подошло), затем в STEP (не удалось построить сетку разбиения из-за неточностей в геометрии помещения). В итоге было принято решение построить упрощенную модель сразу в COMSOL. Помещение размером $10 \times 6 \times 3 \text{ м}^3$ с окном, дверью и внутренней стеной с проходом. Материал стен - Concrete, дверь - Wood (pine), окно - Glass (quartz).
+
+Начальная температура стен и воздуха внутри $20$ °C, внешняя температура задается синусоидой с периодом $24$ часа и амплитудой $4$ °C.
+Временной промежуток $1$ день, шаг $5$ минут. Размер сетки Finer. При этом можно увидеть, что окно разбито на более мелкую сетку, чем все остальное (Рис. \ref{window}). Если отдельно сделать сетку для окна погрубее (Normal), то можно добиться снижения количества элементов разбиения на 22\% (в данном примере было $98659$, стало $76413$) без ухудшения качества.
 
 \begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{smart_room/simple/150s.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/simple/350s.png}
-\caption{Temperature at 150s and 350s}
+\includegraphics[width=0.5\textwidth]{smart_room/simple/window_finer.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/simple/window_normal.png}
+\caption{Сетка разбиения окна}
+\label{window}
+\end{figure}
+
+
+Полученные результаты можно увидеть на изображениях снизу. На них показана температура стен и температура воздуха в горизонтальном разрезе.
+
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_6h.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_9h.png}
+\caption{6 и 9 часов}
 \end{figure}
 
 \begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{smart_room/simple/550s.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/simple/750s.png}
-\caption{Temperature at 550s and 750s}
+\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_12h.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_15h.png}
+\caption{12 и 15 часов}
 \end{figure}
 
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_18h.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_21h.png}
+\caption{18 и 21 час}
+\end{figure}
 \newpage
 
 
