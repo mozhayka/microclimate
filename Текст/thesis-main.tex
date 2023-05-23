@@ -1,0 +1,41 @@
+\documentclass[a4paper,article,14pt]{extarticle}
+
+% Подключаем главный пакет со всем необходимым
+\usepackage{items/spbudiploma}
+
+% Пакеты по желанию (самые распространенные)
+% Хитрые мат. символы
+\usepackage{euscript}
+% Таблицы
+\usepackage{longtable}
+\usepackage{makecell}
+% Картинки (можно вставлять даже pdf)
+\usepackage[pdftex]{graphicx}
+
+\usepackage{amsthm,amssymb, amsmath}
+\usepackage{textcomp}
+
+% \usepackage{minted} % для примеров кода (требует параметра -shell-escape)
+% \usemintedstyle{bw}
+\usepackage{float}
+% \subcaptionbox для нескольких картинок в ряд
+\usepackage{subcaption}
+
+\begin{document}
+
+% Титульник в файле titlepage.tex
+\input{items/0_titlepage.tex}
+
+% Содержание
+\tableofcontents
+\pagebreak
+
+\include{items/1_intro}
+
+\include{items/2_modeling}
+
+\include{items/3_algo}
+
+\include{items/4_concl}
+
+\end{document}
