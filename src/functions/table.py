@@ -18,6 +18,9 @@ def point_temperature_1d(df, point, cut_left = 0, cut_right = 0):
         cut_right = None
     return df.iloc[:, point].values[cut_left:cut_right]
 
-
+def get_points(df):
+    return range(1, len(df.columns) - 2)
+    
+    
 def point_coordinates(df, number):
     return df.columns[number][20:]

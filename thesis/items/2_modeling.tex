@@ -91,36 +91,44 @@
 \newpage
 
 
-\subsection{Добавление солнечной радиации}
+\subsection{Моделирование с реальными данными температур}
 
-Следующим шагом стало добавление солнечной радиации.
-Все внешние стены комнаты и потолок, а также внутренние стены, на которые могло светить солнце сквозь стекло, были подвержены тепловому излучению.\\
-В качестве источника радиации выбрано солнце, географическое расположение помещения - город Москва, дата 14.03.2023, солнечное излучение $1000[W/m^2]$.
-Смоделирован промежуток времени протяженностью 24 часа.\\
-Полученные результаты ниже
+Для моделирования погодных условий был использован датасет с температурами, использованный для прошлых исследований, за май-август 2020 года. В нем с шагом примерно 1 секунда записаны показания датчика, расположенного снаружи (Рис. \ref{real-temperature-plot}). Было решено промоделировать 4 дня с шагом в 5 минут. 
 
 \begin{figure}[H]
-\includegraphics[width=0.3\textwidth]{smart_room/solar_radiation/12.png}\hfill
-\includegraphics[width=0.3\textwidth]{smart_room/solar_radiation/14.png}\hfill
-\includegraphics[width=0.3\textwidth]{smart_room/solar_radiation/16.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/18.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/20.png}
-\caption{Temperature at 12, 14, 16, 18, 20 hours}
+\includegraphics[width=\textwidth]{smart_room/real_temperature/temperature_plot.png}
+\caption{График внешней температуры}
+\label{real-temperature-plot}
 \end{figure}
-
-На этих изображениях можно отметить нагрев части стены и пола, на которую светит солнце через окно
 
 \newpage
 
 
-\subsection{Моделирование с реальными данными температур}
+\subsection{Добавление солнечной радиации}
 
-Для моделирования погодных условий был использован датасет с температурами, использованный для прошлых исследований, за май-август 2020 года. В нем с шагом примерно 1 секунда записаны показания датчика, расположенного снаружи. Было решено промоделировать 4 дня с шагом в 5 минут. Сетка выбрана finer, как наиболее сбалансированная по времени подсчета и качеству.
+Следующим шагом стало добавление солнечной радиации.
+Все внешние стены комнаты и потолок, а также внутренние стены и пол, на которые могло светить солнце сквозь стекло, были подвержены тепловому излучению. Окно расположено стороной на юг.
+
+В качестве источника радиации выбрано солнце, географическое расположение помещения - город Москва, дата 04.08.2020.
+Полученные результаты ниже (Рис. \ref{fine-radiation}). На этих изображениях можно отметить нагрев части пола, на которую светит солнце через окно.
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{smart_room/real_temperature/temperature_plot.png}
-\caption{Ambient temperature plot}
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_1.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_2.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_3.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_4.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_5.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_6.png}\hfill
+\includegraphics[width=\textwidth]{smart_room/solar_radiation/fine_color_legend.png}\hfill
+\caption{}
+\label{fine-radiation}
 \end{figure}
+
+
+
+
+
+
 
 
 

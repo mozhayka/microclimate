@@ -1,12 +1,15 @@
 \graphicspath{{./images/algo}}
 \section{Аналитическая часть}
 
+Целью этого этапа является нахождение оптимального расположения датчика с помощью полученной модели.
+
 \subsection{Экспортирование результата в таблицу}
+
 
 Для построения таблицы температур было решено выбрать 27 точек (3x3x3).
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{interesting_points.png}
+\includegraphics[width=\textwidth]{comsol/interesting_points_9x9x9.png}
 \caption{27 points}
 \end{figure}
 
@@ -15,6 +18,20 @@
 Для выбора оптимального варианта по времени и качеству, нужно сравнить температуры в точках на шагах в 5 минут.
 Для этого можно рассмотреть значения температур в некоторых точках при значении времени 86100 сек (5 минут до окончания расчета).
 Для coarser значения в первых 5 точках:\\
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c|c}
+\textbf{Time (s)} & \textbf{Point 1} & \textbf{Point 2} & ... & \textbf{Point 27} & \textbf{Ambient} \\ \hline
+0                 & 20.0             & 19.4             &     & 20.8              & 17.9             \\
+300               & 19.9             & 19.4             &     & 20.7              & 17.9             \\
+600               & 19.9             & 19.4             &     & 20.6              & 17.9             \\
+...               &                  &                  &     &                   &                  \\
+345600            & 21.2             & 21.5             &     & 20.8              & 19.9            
+\end{tabular}
+\end{table}
+
 
 \begin{table}[H]
 \begin{tabular}{lllllll}
