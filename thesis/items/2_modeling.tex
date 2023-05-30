@@ -4,7 +4,7 @@
 
 \subsection{Построение модели куба}
 
-В начале работы было решено создать простую модель деревянного куба с ребром $1$ метр и толщиной стен $15$ сантиметров, а затем проанализировать изменение температуры внутри. Для создания физической модели использовался SolidWorks \cite{solidworks}, а затем модель была импортирована в COMSOL. В COMSOL внутренность куба заполнили воздухом (куб воздуха с ребром $0.7$ м), материал стен выбран как дерево (сосна).
+В начале работы, в целях изучения возможностей, а также определения параметров моделирования, было решено создать простую модель деревянного куба с ребром $1$ метр и толщиной стен $15$ сантиметров, а затем проанализировать изменение температуры внутри. Для создания физической модели использовался SolidWorks \cite{solidworks}, а затем модель была импортирована в COMSOL. В COMSOL внутренность куба заполнили воздухом (куб воздуха с ребром $0.7$ м), материал стен выбран как дерево (сосна).
 
 Начальная температура стен и воздуха внутри $293$ К. Температура, действующая на внешнюю поверхность стен куба, задана по формуле:
 \[300 + 50 \cdot \sin(\frac{\pi \cdot t[s]}{500}) K\]
@@ -70,24 +70,28 @@
 Полученные результаты можно увидеть на изображениях снизу (Рис. \ref{6-9}, \ref{12-15}, \ref{18-21}). На них показана температура стен и температура воздуха в горизонтальном разрезе.
 
 \begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_6h.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_9h.png}
+\includegraphics[width=0.5\textwidth]{smart_room/simple/graphics/6.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/simple/graphics/9.png}
 \caption{6 и 9 часов}
 \label{6-9}
 \end{figure}
 
 \begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_12h.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_15h.png}
+\includegraphics[width=0.5\textwidth]{smart_room/simple/graphics/12.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/simple/graphics/15.png}
 \caption{12 и 15 часов}
 \label{12-15}
 \end{figure}
 
 \begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_18h.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/simple/finer_21h.png}
+\includegraphics[width=0.5\textwidth]{smart_room/simple/graphics/18.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/simple/graphics/21.png}
 \caption{18 и 21 час}
 \label{18-21}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{smart_room/simple/legend.png}\hfill
 \end{figure}
 \newpage
 
@@ -101,8 +105,9 @@
 Было решено промоделировать 4 дня с шагом в 5 минут (04.08-07.08). 
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{smart_room/real_temperature/temperature_plot.png}
-\caption{График внешней температуры}
+\centering
+\includegraphics[width=0.9\textwidth]{smart_room/real_temperature/temperature_plot.png}
+\caption{}
 \label{real-temperature-plot}
 \end{figure}
 
@@ -122,15 +127,19 @@
 Полученная модель является лишь частью полной модели, так как на температуру будет еще влиять отопление, приточная вентиляция и активность людей внутри. Тем не менее, эти величины можно оценить по параметрам установок. В то же время, влияние внешней среды на внутреннюю температуру более сложное и менее предсказуемое. Поэтому наша цель - решить эту проблему, оценив вклад внешней среды отдельно от всего остального. А для этого достаточно упрощенной модели.
 
 \begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_1.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_2.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/1.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/2.png}\hfill
 \end{figure}
 
 \begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_3.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_4.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_5.png}\hfill
-\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/fine_6.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/3.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/4.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/5.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/6.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/7.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/8.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/9.png}\hfill
+\includegraphics[width=0.5\textwidth]{smart_room/solar_radiation/solar/10.png}\hfill
 \includegraphics[width=\textwidth]{smart_room/solar_radiation/fine_color_legend.png}\hfill
 \caption{}
 \label{fine-radiation}
